@@ -1,8 +1,7 @@
+## 📌 For complete analysis and answers, please check **Dataset Analysis.pdf** and for the code please check **data_exploration_cleaning.ipynb**
 
 
 # Section One: Data Exploration & Cleaning
-
-## 📌 For complete analysis and answers, please check **Dataset Analysis.pdf** and for the code please check **data_exploration_cleaning.ipynb**
 
 ## Overview
 This section provides a high-level summary of the data exploration and cleaning process conducted using **Pandas** in Python. The goal was to identify data quality issues, inconsistencies, and potential anomalies before analysis.
