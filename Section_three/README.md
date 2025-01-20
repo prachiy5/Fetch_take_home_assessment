@@ -2,64 +2,40 @@
 
 ### **Subject: Data Quality Insights & Key Business Findings from Analysis**  
 
-### **Greetings,**  
-I’ve completed an in-depth analysis of our users, transactions, and products datasets, identifying key data quality issues, outstanding questions, interesting trends, business insights, and next steps that can inform future decisions. Below is a summary of my findings:  
+## Hi Team,
+I've analyzed our user, transaction, and product data and uncovered some important findings that could impact decision-making. Below is a quick summary of the key data quality issues, an interesting business trend, and what I need from you to move forward.
 
----
+## Key Data Quality Issues 
 
-### **Data Quality Issues**  
-#### **Missing & Inconsistent Data:**  
-- **Users Dataset:** `BIRTH_DATE`, `STATE`, `LANGUAGE`, and `GENDER` have significant missing values, affecting demographic-based insights.  
-- **Transactions Dataset:** `BARCODE` is missing in **5,762 (~11.5%)** records, and `FINAL_SALE` is missing in **12,500 (25%)** of transactions.  
-- **Products Dataset:** **226K+** missing `BRAND` and/or `MANUFACTURER` values and some barcodes linked to multiple manufacturers/brands.  
+### Missing & Inconsistent Data:
+1. **User Data**: Birth date, state, language, and gender fields have significant gaps, making it hard to segment and analyze user demographics.
+2. **Transaction Data**: Around 11.5% of transactions are missing barcodes, and 25% are missing final sale values, making it difficult to track product performance.
+3. **Product Data**: Over 226K records lack brand or manufacturer info, and some barcodes are linked to multiple brands. Could this be due to data mismatches, inconsistencies in product sourcing, or legitimate multi-brand assignments?
 
-#### **Duplicate & Anomalous Transactions:**  
-- **171 duplicate transactions** removed.  
-- Cases where `FINAL_QUANTITY = 0` but `FINAL_SALE` has a value (**possible refunds, weight-based pricing, or data entry errors**).  
+### Potential Data Errors & Anomalies:
+1. We found transactions where the quantity is **0**, but there's still a sale amount. Could this be due to refunds, pricing issues, or mistakes in data entry?
+2.  Some gender entries are written differently (**"non_binary" vs. "non-binary"**), and some state names may need to be checked for accuracy.
+3.  **FINAL_QUANTITY** sometimes has decimal values instead of whole numbers. Is this because the quantity is measured by weight or volume, or could it be a data error?
 
-#### **String & Categorical Data Issues:**  
-- `GENDER` values are inconsistent (`non_binary` vs. `non-binary`), and `STATE` names require validation.  
+### Open Questions:
+1. Should we try to fill in the missing barcode information ourselves, or should we leave out these transactions from our analysis since the data is incomplete?
+2. If the quantity is **0**, but there's still a sale amount, does this mean the transaction is valid, a refund, or a possible error?
+3. Should each product have a unique barcode, or is there a valid business reason for different brands using the same barcode?
 
----
+## Interesting Trend: Fetch’s User Growth & Recent Decline
 
-### **Outstanding Questions:**  
-- Should missing `BARCODE` values be manually mapped, or should these transactions be excluded?  
-- Do we treat `FINAL_QUANTITY = 0` but `FINAL_SALE > 0` as valid, refunds, or do we flag them as potential data issues?  
-- Can we validate whether some barcodes are correctly assigned to multiple brands/manufacturers, or do we need to standardize them?  
-- Is `FINAL_QUANTITY` expected to be a whole number, or does it represent weight/volume for some products?  
+Fetch grew rapidly from **2017 to 2020**, reaching **16,886 new users in 2020** (a **138% increase** from the previous year).
+After that, growth slowed in **2021 (+13%)**, picked up again in **2022 (+40%)**, but then dropped sharply in **2023 (-42%)** and **2024 (-25%)**.
 
----
+## Request for Action – Need Your Input!
+To move forward, I need your thoughts on:
 
-### **Interesting Trends: Fetch’s YoY Growth / Decline**  
-- Fetch saw rapid growth from **2017 to 2020**, peaking at **16,886 new users in 2020** (**+137.97% YoY**).  
-- Growth slowed in **2021 (+13.52%)**, rebounded in **2022 (+39.87%)**, but declined sharply in **2023 (-42.37%)** and **2024 (-24.79%)**.  
+1. Do we attempt to fill in missing barcodes manually or exclude these records?
+2. If a sale amount is recorded, but the quantity is **0**, is this a valid transaction, a refund, or a mistake?
+3. Do we have any insights on why Fetch’s growth has slowed down?
 
----
+Your feedback will help us improve data reliability and optimize future analysis. Let me know your thoughts, and let’s align on the best next steps.
 
-### **Business Insight: Power Users & Brand Engagement**  
-- **Tostitos** is the leading brand in the **Dips & Salsa** category, ranking **#1** in both sales (**$260.99**) and purchase frequency (**72 transactions**).  
-- **CVS** leads in total sales among long-term users (**$72**), showing strong engagement with pharmacy/household essentials.  
-- **Dove** consistently ranks among top-scanned and top-purchased brands, reinforcing high engagement in personal care.  
-
----
-
-### **Potential Actions:**  
-- Target **Tostitos, CVS, and Dove** for exclusive Fetch promotions.  
-- Use brand engagement insights to develop **category-based rewards**.  
-- Create **targeted loyalty campaigns** for high-frequency & high-value brands.  
-
----
-
-### **Next Steps & Request for Input**  
-To improve data reliability and optimize future insights, I’d appreciate input on the following:  
-- **Data Quality Adjustments:** Should we manually map missing barcodes or exclude these transactions?  
-- **Anomaly Validation:** How do we handle cases where `FINAL_QUANTITY = 0` but `FINAL_SALE > 0`?  
-- **User Growth Strategy:** Do we have insights on how competitor growth compares to Fetch’s recent decline?  
-
-Would love your feedback on these points. Let’s discuss how we can refine our strategy based on these findings.  
-
----
-
-**Best,**  
-Prachi Yadav  
-**Senior Data Analyst**  
+Thanks,  
+**Prachi Yadav**  
+*Senior Data Analyst*
