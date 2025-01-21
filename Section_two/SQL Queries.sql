@@ -143,7 +143,7 @@ GROUP BY GENERATION;
 ----------------QUESTION 1---------------------------------------------------------------------------------------------
 
 
--- 1. Who are Fetch’s power users?
+-- 1. Who are Fetchâ€™s power users?
 
 --Power Users by Transaction Count--
 
