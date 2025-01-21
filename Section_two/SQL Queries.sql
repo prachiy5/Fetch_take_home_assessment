@@ -121,7 +121,7 @@ GROUP BY GENERATION;
 
 ---OPEN ENDED QUESTIONS---
 
--- 1. Who are Fetch’s power users?
+-- 1. Who are Fetchâ€™s power users?
 
 --Power Users by Transaction Count
 
